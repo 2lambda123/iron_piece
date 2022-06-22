@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Piece of Iron Game</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <h1>Piece of Iron Game</h1>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+class KeCe{
+    constructor(){
+        this.active = true;
+    }
+    get active(){
+        return this.active;
+    }
+    set active(value){
+        this.active = value;
+    }
+}
+
+class ROW{
+    constructor(num){
+        this.ROWS = [];
+        for (i=0; i<num*2+1; i++){
+            this.ROWS.push(new KeCe());
+        }
+    }
+}
+
+</script>
+</body>
+</html>
