@@ -32,7 +32,6 @@ class Game:
         number = int(_move[1])
         if self.field.rows[row]<number:
             return (False, 'Too big number in a row')
-
         self.field.rows[row] -= number
         print(f'Move was made by Player {self.curPlayerNo}')
 
@@ -54,10 +53,10 @@ if __name__ == '__main__':
     print(f'Total Game field is : {g.field}')
     print(sum(g.field.rows))
     while True:
-        mv = input('Input your move: ')
+        mv = input(f'Player {g.curPlayerNo}! Input your move: ')
         if mv == 'stop':
             break
-        #print(g.move(mv))
+        _ = g.move(mv)
         print(f'Now field is: {g.field} Game ends:{g.ends}')
         if g.ends:
             break
