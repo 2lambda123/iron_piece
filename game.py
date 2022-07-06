@@ -52,13 +52,18 @@ if __name__ == '__main__':
     print('Creating PlayField')
     g = Game()
     print(f'Total Game field is : {g.field}')
-    print(sum(g.field.rows))
     while True:
         mv = input(f'Player {g.curPlayerNo}! Input your move: ')
         if mv == 'stop':
             break
-        _ = g.move(mv)
-        print(f'Now field is: {g.field} Game ends:{g.ends}')
+        _move = g.move(mv)
+        if _move[0]:
+            print(f'Now field is: {g.field}')
+        else:
+            print(f'Move had illegal format: {_move[1]}')
         if g.ends:
             break
-    print(f'Game is over. Player {g.curPlayerNo} win.')
+    if mv != 'stop':
+        print(f'Game is over. Player {g.curPlayerNo} win.')
+    else:
+        print(f'Game was broken by the player {g.curPlayerNo}')
