@@ -4,6 +4,7 @@
 class PlayField:
     def __init__(self):
         self.rows = [1, 3, 5, 7]
+
     def __str__(self):
         return str(self.rows)
 
@@ -23,14 +24,14 @@ class Game:
         if not row_str.isdigit():
             return (False, 'Move is not a number')
         row = int(row_str)
-        if row>3:
+        if row > 3:
             return (False, 'Too big row')
-        if len(_move)<2:
+        if len(_move) < 2:
             return (False, 'Too short move')
         if not _move[1].isdigit():
             return (False, 'Second digit in move is not a number')
         number = int(_move[1])
-        if self.field.rows[row]<number:
+        if self.field.rows[row] < number:
             return (False, 'Too big number in a row')
         self.field.rows[row] -= number
         print(f'Move was made by Player {self.curPlayerNo}')
@@ -44,7 +45,7 @@ class Game:
 
     @property
     def ends(self):
-        return sum(self.field.rows)==0
+        return sum(self.field.rows) == 0
 
 
 if __name__ == '__main__':
